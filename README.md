@@ -1,5 +1,11 @@
-Independent Publisher Child Theme
+Independent Publisher Child Theme for geongeorge.com
 ===========================
+
+I just styled the theme. All credits goes to: [Independent Publisher](http://independentpublisher.me)
+
+This is a child theme so you need [Independent Publisher](http://independentpublisher.me) installed and activated before you activate this theme
+
+## Official readme:
 
 This child theme can be used to override styles and features of the [Independent Publisher](http://independentpublisher.me) theme. For a complete list of functions you can override in this child theme, please see [Functions you can override in a Child Theme](https://github.com/raamdev/independent-publisher#functions-you-can-override-in-a-child-theme).
 
