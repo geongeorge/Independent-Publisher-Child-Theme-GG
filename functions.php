@@ -42,3 +42,39 @@ function independent_publisher_footer_credits() {
 	return $my_custom_footer;
 }
 */
+
+function wpb_add_google_fonts() {
+ 
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Rubik|Inconsolata|ZCOOL+KuaiLe', false ); 
+}
+add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
+
+
+function footer_text_changer($wp_customize) {
+	$wp_customize->add_setting( 'gg_footer_text' , array(
+		'default'   => 'Hello world!',
+		'transport' => 'refresh',
+	) );
+
+	$wp_customize->add_section( 'independent_publisher_footer_section' , array(
+		'title'      => __( 'Footer', 'independent_publisher' ),
+		'priority'   => 190,
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gg_footer_text', array(
+		'label'      => __( 'Footer Text', 'independent_publisher' ),
+		'section'    => 'independent_publisher_footer_section',
+		'settings'   => 'gg_footer_text',
+		'type' => 'textarea'
+	) ) );
+
+}
+add_action('customize_register','footer_text_changer');
+
+
+
+
+
+function independent_publisher_footer_credits() {
+	echo get_theme_mod( 'gg_footer_text');
+}
